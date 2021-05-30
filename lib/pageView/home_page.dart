@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_component/Component/root_page_header.dart';
+import 'package:flutter_application_component/config/theme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,6 +35,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       length: _tabs.length,
       vsync: this,
     );
+
+    // _tabController.addListener(() {
+    //   _tabController.index;
+    // });
   }
 
   @override
@@ -45,10 +51,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        backgroundColor: NBATheme.NBAblue,
+        title: RootPageHeader(),
         bottom: TabBar(
           tabs: _tabs,
           controller: _tabController,
+          isScrollable: true,
         ),
       ),
       body: TabBarView(

@@ -10,13 +10,13 @@ class StartPage extends StatefulWidget {
 
 //jump to rootpage
 class _StartPageState extends State<StartPage> {
-  // Timer _timer = new Timer;
-  int _currentTime = 5;
+  late Timer _timer;
+  int _currentTime = 2;
 
   void initState() {
     super.initState();
 
-    Timer.periodic(Duration(milliseconds: 1000), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: 1000), (timer) {
       setState(() {
         _currentTime--;
       });
@@ -27,6 +27,7 @@ class _StartPageState extends State<StartPage> {
   }
 
   void _jumpToRoot() {
+    _timer.cancel();
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (BuildContext context) => RootPage()),
