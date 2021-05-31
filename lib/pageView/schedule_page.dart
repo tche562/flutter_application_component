@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_component/Component/root_page_header.dart';
+import 'package:flutter_application_component/config/theme.dart';
 
 class SchedulePage extends StatefulWidget {
   @override
@@ -8,8 +10,12 @@ class SchedulePage extends StatefulWidget {
 class _SchedulePageState extends State<SchedulePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Schedule Page"),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: NBATheme.NBAblue,
+        title: RootPageHeader(),
+      ),
+      body: Text('Schedule'),
     );
   }
 }

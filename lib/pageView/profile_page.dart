@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_component/config/theme.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -8,6 +9,21 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: NBATheme.NBAblue,
+        title: Text('User Information'),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+              size: 20,
+              color: NBATheme.whiteLight,
+            ),
+            onPressed: () {},
+          ),
+        ],
+      ),
+    );
   }
 }

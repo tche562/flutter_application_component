@@ -14,6 +14,8 @@ class NBATheme {
   static const double fontSize04 = 16;
 
   static const NBAblue = const Color(0xf11d428a);
+  static const NBAbluelight = const Color(0xf14d6ca8);
+
   static const NBAred = const Color(0xf1c8102e);
 
   static const whiteLight = Colors.white;
