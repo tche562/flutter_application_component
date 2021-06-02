@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_component/Component/game_page_header.dart';
+import 'package:flutter_application_component/config/theme.dart';
 import '/json/jsons.dart';
 import '/http/network.dart';
 import '/http/urls.dart';
@@ -43,7 +44,7 @@ class _StandingsState extends State<Standings> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0XFF1F6BA3),
+          backgroundColor: NBATheme.NBAblue,
           automaticallyImplyLeading: false, // hides back arrow button
           bottom: TabBar(
             tabs: [

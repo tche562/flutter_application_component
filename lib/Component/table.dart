@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ConfTable extends StatefulWidget {
   final dynamic json;
-  final Map? teamIds;
+  late final Map? teamIds;
   ConfTable({this.json, this.teamIds});
   @override
   _ConfTableState createState() => _ConfTableState();
@@ -10,7 +10,8 @@ class ConfTable extends StatefulWidget {
 
 class _ConfTableState extends State<ConfTable> {
   List<DataRow> tableData() {
-    List<DataRow> table = List.empty(); // fixed table length of 15 teams
+    List<DataRow> table = List.generate(
+        12, (_) => DataRow(cells: [])); // fixed table length of 15 teams
     for (int index = 0; index < widget.teamIds!.length; index++) {
       String rank =
           widget.json["api"]["standings"][index]["conference"]["rank"];
