@@ -11,7 +11,7 @@ class ConfTable extends StatefulWidget {
 class _ConfTableState extends State<ConfTable> {
   List<DataRow> tableData() {
     List<DataRow> table = List.generate(
-        12, (_) => DataRow(cells: [])); // fixed table length of 15 teams
+        15, (_) => DataRow(cells: [])); // fixed table length of 15 teams
     for (int index = 0; index < widget.teamIds!.length; index++) {
       String rank =
           widget.json["api"]["standings"][index]["conference"]["rank"];
