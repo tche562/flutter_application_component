@@ -18,7 +18,7 @@ class Network {
   static Future<dynamic> getJson(String url) async {
     // make request to get Json file
     try {
-      var response = await http.get(url);
+      var response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         if (response.body.isNotEmpty) {
           var json = convert.jsonDecode(response.body);
