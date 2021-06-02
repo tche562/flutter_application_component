@@ -3,6 +3,7 @@ import 'package:flutter_application_component/config/theme.dart';
 import 'package:flutter_application_component/pageView/home_page.dart';
 import 'package:flutter_application_component/pageView/profile_page.dart';
 import 'package:flutter_application_component/pageView/schedule_page.dart';
+import 'package:flutter_application_component/pageView/standings.dart';
 import 'package:flutter_application_component/pageView/stats_page.dart';
 
 class RootPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _RootPageState extends State<RootPage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),
+    Standings(),
     StatsPage(),
     SchedulePage(),
     ProfilePage()
