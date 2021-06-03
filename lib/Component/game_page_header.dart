@@ -6,29 +6,31 @@ import '../constant.dart';
 class Gamepageheader extends StatelessWidget {
   // const Gamepageheader({Key? key}) : super(key: key);
 
-  final dynamic eastTable;
-  final dynamic westTable;
-  Gamepageheader({this.eastTable, this.westTable});
+  final dynamic ConferenceTable;
+  final String? Conferencename;
+  // late final Map? teamIds;
+  // final dynamic westTable;
+  Gamepageheader({this.ConferenceTable, this.Conferencename});
 
   @override
   Widget build(BuildContext context) {
-    return TabBarView(
-      children: [
+    return //TabBarView(
+        //   children: [
         SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: ConfTable(
-            json: eastTable,
-            teamIds: eastID,
-          ),
-        ),
-        SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: ConfTable(
-            json: westTable,
-            teamIds: westID,
-          ),
-        )
-      ],
+      scrollDirection: Axis.vertical,
+      child: ConfTable(
+        json: ConferenceTable,
+        teamIds: (Conferencename == 'east') ? eastID : westID,
+      ),
     );
+    // SingleChildScrollView(
+    //   scrollDirection: Axis.vertical,
+    //   child: ConfTable(
+    //     json: westTable,
+    //     teamIds: westID,
+    //   ),
+    // )
+    // ],
+    // );
   }
 }

@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_component/Component/root_page_header.dart';
 import 'package:flutter_application_component/config/theme.dart';
+import 'package:flutter_application_component/Component/game_page_header.dart';
+import 'package:flutter_application_component/pageView/sub_pages/east_page.dart';
+import 'package:flutter_application_component/pageView/sub_pages/west_page.dart';
+import '/json/jsons.dart';
+import '/http/network.dart';
+import '/http/urls.dart';
+import 'package:provider/provider.dart';
+import '/component/connection.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,20 +17,22 @@ class HomePage extends StatefulWidget {
 
 const List<Tab> _tabs = [
   Tab(
-    text: 'Teams',
+    text: 'West',
   ),
   Tab(
-    text: 'Players',
+    text: 'East',
   ),
-  Tab(
-    text: 'Games',
-  ),
+
+  // Tab(
+  //   text: 'Games',
+  // ),
 ];
 
 final List<Widget> _tabContent = [
-  Text('Teams'),
-  Text('Players'),
-  Text('Games'),
+  WestPage(),
+  EastPage(),
+
+  // Text('Games'),
 ];
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
@@ -36,9 +46,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       vsync: this,
     );
 
-    // _tabController.addListener(() {
-    //   _tabController.index;
-    // });
+    _tabController.addListener(() {
+      _tabController.index;
+    });
   }
 
   @override

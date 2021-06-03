@@ -18,10 +18,25 @@ class _ConfTableState extends State<ConfTable> {
       int pos = int.parse(rank) - 1; // position to insert data
       table[pos] = DataRow(
         cells: [
+          // DataCell(
+          //   Text(
+          //     "$rank ${widget.teamIds![widget.json["api"]["standings"][index]["teamId"]][1]}",
+          //     style: TextStyle(fontWeight: FontWeight.bold),
+          //   ),
+          // ),
           DataCell(
-            Text(
-              "$rank ${widget.teamIds![widget.json["api"]["standings"][index]["teamId"]][1]}",
-              style: TextStyle(fontWeight: FontWeight.bold),
+            Row(
+              children: [
+                Text(
+                  "$rank ${widget.teamIds![widget.json["api"]["standings"][index]["teamId"]][1]}  ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Image.asset(
+                  'assets/images/team/${widget.teamIds![widget.json["api"]["standings"][index]["teamId"]][1]}.png',
+                  width: 28,
+                  height: 28,
+                ),
+              ],
             ),
           ),
           DataCell(
@@ -55,7 +70,7 @@ class _ConfTableState extends State<ConfTable> {
           label: Text(
             'W',
             style: TextStyle(
-              color: Colors.green,
+              color: Colors.blue,
             ),
           ),
         ),
@@ -63,7 +78,7 @@ class _ConfTableState extends State<ConfTable> {
           label: Text(
             'L',
             style: TextStyle(
-              color: Colors.red,
+              color: Colors.blue,
             ),
           ),
         ),
@@ -71,7 +86,7 @@ class _ConfTableState extends State<ConfTable> {
           label: Text(
             'Pct',
             style: TextStyle(
-              color: Colors.amber,
+              color: Colors.blue,
             ),
           ),
         ),

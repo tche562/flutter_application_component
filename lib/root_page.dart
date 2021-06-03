@@ -22,7 +22,7 @@ class _RootPageState extends State<RootPage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    Standings(),
+    HomePage(),
     StatsPage(),
     SchedulePage(),
     ProfilePage()
