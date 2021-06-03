@@ -3,7 +3,6 @@ import 'package:flutter_application_component/config/theme.dart';
 import 'package:flutter_application_component/pageView/home_page.dart';
 import 'package:flutter_application_component/pageView/profile_page.dart';
 import 'package:flutter_application_component/pageView/schedule_page.dart';
-import '/pageView/standings.dart';
 import 'package:flutter_application_component/pageView/stats_page.dart';
 
 class RootPage extends StatefulWidget {

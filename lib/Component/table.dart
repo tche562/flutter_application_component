@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ConfTable extends StatefulWidget {
   final dynamic json;
-  late final Map? teamIds;
+  final Map? teamIds;
   ConfTable({this.json, this.teamIds});
   @override
   _ConfTableState createState() => _ConfTableState();
@@ -29,12 +29,16 @@ class _ConfTableState extends State<ConfTable> {
               children: [
                 Text(
                   "$rank ${widget.teamIds![widget.json["api"]["standings"][index]["teamId"]][1]}  ",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Image.asset(
                   'assets/images/team/${widget.teamIds![widget.json["api"]["standings"][index]["teamId"]][1]}.png',
                   width: 28,
                   height: 28,
+                  // fit: BoxFit.fill,
                 ),
               ],
             ),

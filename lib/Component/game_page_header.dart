@@ -23,14 +23,5 @@ class Gamepageheader extends StatelessWidget {
         teamIds: (Conferencename == 'east') ? eastID : westID,
       ),
     );
-    // SingleChildScrollView(
-    //   scrollDirection: Axis.vertical,
-    //   child: ConfTable(
-    //     json: westTable,
-    //     teamIds: westID,
-    //   ),
-    // )
-    // ],
-    // );
   }
 }

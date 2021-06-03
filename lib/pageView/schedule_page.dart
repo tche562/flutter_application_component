@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_component/Component/root_page_header.dart';
 import 'package:flutter_application_component/config/theme.dart';
+import 'sub_pages/schedule_inner_page.dart';
 
 class SchedulePage extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _SchedulePageState extends State<SchedulePage> {
         backgroundColor: NBATheme.NBAblue,
         title: RootPageHeader(),
       ),
-      body: Text('Schedule'),
+      body: ScheduleInnerPage(),
     );
   }
 }
